@@ -1,4 +1,5 @@
 import React from "react";
+//this component will map over the messages sent through props to display on the board 
 
 function MessageBoard( {messages} ) {
     return(
