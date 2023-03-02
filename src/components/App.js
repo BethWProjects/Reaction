@@ -1,6 +1,8 @@
 import React, { useReducer, useEffect } from "react";
-import reducer, { initialState } from "./state/reducer";
-import { newMessage } from './state/actions'
+import reducer, { initialState } from "../state/reducer";
+// import { newMessage } from '../state/actions'
+import PublishMessage from "./PublishMessage";
+import MessageBoard from "./MessageBoard";
 
 
 function App() {
@@ -13,6 +15,10 @@ function App() {
   return (
     <div>
      <h2>Reaction</h2>
+     <hr />
+     <PublishMessage dispatch={dispatch}/>
+     <hr />
+     <MessageBoard messages={state.messages}/> 
     </div>
   );
 }
