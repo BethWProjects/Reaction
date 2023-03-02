@@ -1,7 +1,10 @@
 import React from "react";
-//this component will map over the messages sent through props to display on the board 
+import { useAppContext } from "./hooks";
+//this component will map over the messages sent through context to display on the board 
 
-function MessageBoard( {messages} ) {
+function MessageBoard() {
+    const { state: { messages } } = useAppContext()
+
     return(
         <div>
             {

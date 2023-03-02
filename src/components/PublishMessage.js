@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import { useAppContext } from "./hooks";
 import { newMessage } from "../state/actions";
 //this component will dispatch a new message action object once a user types in new text
 
-function PublishMessage(props) {
-    const { dispatch } = props;
+function PublishMessage() {
+    const { dispatch } = useAppContext()
+
     const [text, setText] = useState('');
 
     const updateText = event => {
         setText(event.target.value);
     };
 
-    const publishMessage = (event) => {
+    const publishMessage = () => {
         dispatch(newMessage(text));
         setText('')
     }
