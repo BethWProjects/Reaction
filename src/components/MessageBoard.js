@@ -4,6 +4,7 @@ import { useAppContext } from "./hooks";
 
 function MessageBoard() {
     const { state: { messages } } = useAppContext()
+    console.log('messages', messages)
 
     return(
         <div>

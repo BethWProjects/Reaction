@@ -5,7 +5,7 @@ import { newMessage } from "../state/actions";
 //this component will dispatch a new message action object once a user types in new text
 
 function PublishMessage() {
-    const { dispatch } = useAppContext()
+    const { pubsub: { publish } } = useAppContext()
 
     const [text, setText] = useState('');
 
@@ -17,7 +17,7 @@ function PublishMessage() {
     //refactored code: use the Context.Provider to wrap the JSX in App to pass props overall, rather than passing through individual components. 
     //pass in newMessage with state text as parameter to dispatch function
     const publishMessage = () => {
-        dispatch(newMessage(text));
+        publish(newMessage(text));
         setText('')
     }
 
